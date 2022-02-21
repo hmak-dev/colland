@@ -1,0 +1,32 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
+		"declaration": true,
+		"esModuleInterop": true,
+		"target": "esnext",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"outDir": "lib",
+		"experimentalDecorators": true,
+		"emitDeclarationOnly": true,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"downlevelIteration": true,
+		"paths": {
+			"src/*": ["./src/*"]
+		},
+		"plugins": [{ "transform": "typescript-transform-paths", "afterDeclarations": true }],
+		"skipLibCheck": true
+	},
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules",
+	]
+}

@@ -7,3 +7,6 @@ node_modules
 
 # Build
 lib
+
+# Assets
+src/assets

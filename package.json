@@ -3,33 +3,59 @@
   "version": "0.0.1",
   "description": "Color Space Convertor",
   "main": "index.js",
+  "typings": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hmak-me/colland.git"
   },
   "keywords": [
     "color",
+    "css",
+    "hex",
     "rgb",
     "srgb",
-    "hex",
+    "p3",
+    "display-p3",
+    "a98rgb",
+    "prophoto",
+    "rec2020",
     "hsl",
     "hwb",
     "lab",
     "lch",
     "cmyk",
     "oklab",
-    "oklch",
-    "a98rgb",
-    "prophoto",
-    "rec2020",
-    "p3",
-    "display-p3",
-    "css"
+    "oklch"
   ],
   "author": "Hossein Maktoobian",
   "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production node scripts/build.js",
+    "build:dev": "NODE_ENV=development node scripts/build.js",
+    "dev": "nodemon --exec npm --watch src -e ts,js -- run build:dev"
+  },
   "bugs": {
     "url": "https://github.com/hmak-me/colland/issues"
   },
-  "homepage": "https://github.com/hmak-me/colland#readme"
+  "homepage": "https://github.com/hmak-me/colland#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.0",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "ttypescript": "^1.5.13",
+    "typescript-transform-paths": "^3.3.1"
+  }
 }
