@@ -1,0 +1,35 @@
+{
+  "name": "colland",
+  "version": "0.0.1",
+  "description": "Color Space Convertor",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmak-me/colland.git"
+  },
+  "keywords": [
+    "color",
+    "rgb",
+    "srgb",
+    "hex",
+    "hsl",
+    "hwb",
+    "lab",
+    "lch",
+    "cmyk",
+    "oklab",
+    "oklch",
+    "a98rgb",
+    "prophoto",
+    "rec2020",
+    "p3",
+    "display-p3",
+    "css"
+  ],
+  "author": "Hossein Maktoobian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmak-me/colland/issues"
+  },
+  "homepage": "https://github.com/hmak-me/colland#readme"
+}

@@ -1,14 +1,14 @@
 class Color {
     space = '';
-    componentNames = '';
+    channels = [];
     
     get components() {
-        return this.componentNames.split('').map((ch) => this[`_${ch}`]);
+        return this.channels.map((ch) => this[`_${ch}`]);
     };
     
-    constructor(space, componentNames = undefined) {
+    constructor(space, channels = undefined) {
         this.space = space;
-        this.componentNames = componentNames || space;
+        this.channels = (channels || space).split('');
     }
 }
 
