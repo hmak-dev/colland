@@ -2,9 +2,26 @@
 const fs = require('fs/promises');
 const path = require('path');
 const util = require('util');
+const esbuild = require('esbuild');
 const exec = util.promisify(require('child_process').exec);
 
 const rootPath = process.cwd();
+
+function bundle(minify = true) {
+	return new Promise((resolve, reject) => {
+		esbuild
+			.build({
+				entryPoints: ['./src/index.ts'],
+				bundle: true,
+				minifySyntax: minify,
+				minifyWhitespace: minify,
+				format: 'cjs',
+				outfile: `./lib/colland${minify ? '.min' : ''}.js`,
+			})
+			.then(() => resolve())
+			.catch((error) => reject(error));
+	});
+}
 
 async function copyPackageFiles() {
 	await fs.copyFile(path.resolve(rootPath, 'LICENSE'), path.resolve(rootPath, 'lib/LICENSE'));
@@ -47,6 +64,19 @@ async function copyPackageFiles() {
 				return false;
 			}
 		}
+
+		console.log('Bundling Project...');
+		await bundle();
+		await bundle(false);
+
+		let bundleContent = await fs.readFile(path.resolve(rootPath, 'lib/colland.js'), 'utf8');
+		let minBundleContent = await fs.readFile(path.resolve(rootPath, 'lib/colland.min.js'), 'utf8');
+
+		bundleContent = bundleContent.replace(/;\s*module\.exports\s*[^;]+;/, ';');
+		minBundleContent = minBundleContent.replace(/;module.exports[^;]+;/, ';');
+
+		await fs.writeFile(path.resolve(rootPath, 'lib/colland.js'), bundleContent, 'utf8');
+		await fs.writeFile(path.resolve(rootPath, 'lib/colland.min.js'), minBundleContent, 'utf8');
 
 		console.log('Copying Package Files...');
 		await copyPackageFiles();
