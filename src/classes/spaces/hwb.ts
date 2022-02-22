@@ -39,19 +39,19 @@ class HWBColor extends BaseColor {
 		this._h = val;
 	}
 
-	get s() {
+	get w() {
 		return this._w;
 	}
 
-	set s(val) {
+	set w(val) {
 		this._w = val;
 	}
 
-	get l() {
+	get b() {
 		return this._b;
 	}
 
-	set l(val) {
+	set b(val) {
 		this._b = val;
 	}
 
@@ -150,6 +150,14 @@ class HWBColor extends BaseColor {
 		)
 			.toFixed(precision)
 			.replace('.00', '')})`;
+	}
+
+	toObject() {
+		return {
+			h: this._h,
+			w: this._w * 100,
+			b: this._b * 100,
+		};
 	}
 }
 

@@ -513,7 +513,7 @@ export function sRGB_to_HSL(RGB) {
     hue *= 60;
   }
 
-  return [hue, sat, light];
+  return [hue || 0, sat, light];
 }
 
 export function HWB_to_sRGB(HWB) {

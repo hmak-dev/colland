@@ -164,6 +164,15 @@ class CMYKColor extends BaseColor {
 	toString(precision = 2) {
 		return `cmyk(${this.components.map((c) => `${(c * 100).toFixed(precision).replace('.00', '')}%`).join(', ')})`;
 	}
+
+	toObject() {
+		return {
+			c: this._c * 100,
+			m: this._m * 100,
+			y: this._y * 100,
+			k: this._k * 100,
+		};
+	}
 }
 
 export default CMYKColor;

@@ -80,7 +80,7 @@ class RGBColor extends BaseColor {
 	}
 
 	constructor(red, green, blue) {
-		super('rgb');
+		super('srgb', 'rgb');
 
 		this._r = red;
 		this._g = green;
@@ -158,6 +158,14 @@ class RGBColor extends BaseColor {
 		}
 
 		return `rgb(${this.components.map((c) => Math.round(c * 255)).join(', ')})`;
+	}
+
+	toObject() {
+		return {
+			r: this._r * 255,
+			g: this._g * 255,
+			b: this._b * 255,
+		};
 	}
 }
 

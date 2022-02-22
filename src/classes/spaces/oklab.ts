@@ -129,6 +129,14 @@ class OKLabColor extends BaseColor {
 	toString(precision = 2) {
 		return `oklab(${this.components.map((c) => c.toFixed(precision).replace('.00', '')).join(', ')})`;
 	}
+
+	toObject() {
+		return {
+			l: this._l,
+			a: this._a,
+			b: this._b,
+		};
+	}
 }
 
 export default OKLabColor;

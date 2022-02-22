@@ -145,6 +145,14 @@ class P3Color extends BaseColor {
 	toString(precision = 2) {
 		return `color(display-p3 ${this.components.map((c) => c.toFixed(precision).replace('.00', '')).join(' ')})`;
 	}
+
+	toObject() {
+		return {
+			r: this._r,
+			g: this._g,
+			b: this._b,
+		};
+	}
 }
 
 export default P3Color;

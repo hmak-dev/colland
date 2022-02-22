@@ -145,6 +145,14 @@ class ProPhotoColor extends BaseColor {
 	toString(precision = 2) {
 		return `color(prophoto-rgb ${this.components.map((c) => c.toFixed(precision).replace('.00', '')).join(' ')})`;
 	}
+
+	toObject() {
+		return {
+			r: this._r,
+			g: this._g,
+			b: this._b,
+		};
+	}
 }
 
 export default ProPhotoColor;

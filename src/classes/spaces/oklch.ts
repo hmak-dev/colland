@@ -31,27 +31,27 @@ class OKLCHColor extends BaseColor {
 
 	_h = 0;
 
-	get h() {
+	get l() {
 		return this._l;
 	}
 
-	set h(val) {
+	set l(val) {
 		this._l = val;
 	}
 
-	get s() {
+	get c() {
 		return this._c;
 	}
 
-	set s(val) {
+	set c(val) {
 		this._c = val;
 	}
 
-	get l() {
+	get h() {
 		return this._h;
 	}
 
-	set l(val) {
+	set h(val) {
 		this._h = val;
 	}
 
@@ -144,6 +144,14 @@ class OKLCHColor extends BaseColor {
 
 	toString(precision = 2) {
 		return `oklch(${this.components.map((c) => c.toFixed(precision).replace('.00', '')).join(', ')})`;
+	}
+
+	toObject() {
+		return {
+			l: this._l,
+			c: this._c,
+			h: this._h,
+		};
 	}
 }
 

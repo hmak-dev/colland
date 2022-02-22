@@ -151,6 +151,14 @@ class HSLColor extends BaseColor {
 			.toFixed(precision)
 			.replace('.00', '')})`;
 	}
+
+	toObject() {
+		return {
+			h: this._h,
+			s: this._s * 100,
+			l: this._l * 100,
+		};
+	}
 }
 
 export default HSLColor;
