@@ -26,6 +26,7 @@ function bundle(minify = true) {
 async function copyPackageFiles() {
 	await fs.copyFile(path.resolve(rootPath, 'LICENSE'), path.resolve(rootPath, 'lib/LICENSE'));
 	await fs.copyFile(path.resolve(rootPath, 'README.md'), path.resolve(rootPath, 'lib/README.md'));
+	await fs.copyFile(path.resolve(rootPath, '.npmignore'), path.resolve(rootPath, 'lib/.npmignore'));
 
 	const packageJson = JSON.parse(await fs.readFile(path.resolve(rootPath, 'package.json'), 'utf8'));
 

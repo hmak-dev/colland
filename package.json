@@ -1,6 +1,6 @@
 {
   "name": "colland",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Color Space Convertor",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -37,7 +37,7 @@
   "bugs": {
     "url": "https://github.com/hmak-me/colland/issues"
   },
-  "homepage": "https://github.com/hmak-me/colland#readme",
+  "homepage": "https://hmak-me.github.io/colland/",
   "devDependencies": {
     "@babel/cli": "^7.17.0",
     "@babel/core": "^7.17.0",
